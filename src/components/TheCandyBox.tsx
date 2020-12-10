@@ -13,6 +13,9 @@ import {
   selectPage,
   enableNavBar,
   enableHealthBar,
+  selectHealthBarEnabled,
+  selectMapEnabled,
+  enableMap,
 } from "../store/navigationSlice";
 
 const StyledTheCandyBox = styled.div`
@@ -66,6 +69,8 @@ const TheCandyBox = () => {
   const candies = useSelector(selectCandies);
   const groundCandies = useSelector(selectGroundCandies);
   const navBarEnabled = useSelector(selectNavBarEnabled);
+  const healthBarEnabled = useSelector(selectHealthBarEnabled);
+  const mapEnabled = useSelector(selectMapEnabled);
 
   if (page !== Page.TheCandyBox) return null;
 
@@ -92,20 +97,33 @@ const TheCandyBox = () => {
           )}
         </div>
       )}
-      {candies >= 30 && (
+
+      {/* Nav Bar Unlock */}
+      {candies >= 30 && !navBarEnabled && (
         <Button onClick={() => dispatch(enableNavBar())}>
           Request a new feature (30 candies)
         </Button>
       )}
-      {candies >= 5 && navBarEnabled && (
+
+      {/* Heath Box Unlock */}
+      {candies >= 5 && navBarEnabled && !healthBarEnabled && (
         <Button onClick={() => dispatch(enableHealthBar())}>
           Request another one (5 candies)
         </Button>
       )}
-      {navBarEnabled && !enableHealthBar && (
+
+      {/* Map Unlock */}
+      {candies >= 10 && healthBarEnabled && !mapEnabled && (
+        <Button onClick={() => dispatch(enableMap())}>
+          The one has to be worth the candies. (10 candies)
+        </Button>
+      )}
+
+      {navBarEnabled && !healthBarEnabled && (
         <Text>You've unlocked a Nav Bar! (below)</Text>
       )}
-      {navBarEnabled && (
+
+      {healthBarEnabled && (
         <Text>
           Here's 100 health points for you. They are going to be useful.
         </Text>
