@@ -29,6 +29,9 @@ const Button = styled.div`
     props.selected ? "var(--selected)" : "none"};
   text-transform: uppercase;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Content = styled.div`
@@ -57,6 +60,13 @@ const NavBar = () => {
           onClick={() => dispatch(setPage(Page.TheCandyBox))}
         >
           The Candy Box
+        </Button>
+        <Seperator />
+        <Button
+          selected={page === Page.Map}
+          onClick={() => dispatch(setPage(Page.Map))}
+        >
+          Map
         </Button>
         <Seperator />
       </Content>
