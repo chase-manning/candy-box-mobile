@@ -1,8 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { selectCandies } from "../store/currencySlice";
-import { selectNavBarEnabled } from "../store/navigationSlice";
+import {
+  Page,
+  selectNavBarEnabled,
+  selectPage,
+  setPage,
+} from "../store/navigationSlice";
 import Line from "./Line";
 import Seperator from "./Seperator";
 
@@ -13,6 +18,19 @@ const StyledNavBar = styled.div`
   flex-direction: column;
 `;
 
+type ButtonProps = {
+  selected: boolean;
+};
+
+const Button = styled.div`
+  width: 60px;
+  padding: 5px;
+  background-color: ${(props: ButtonProps) =>
+    props.selected ? "var(--selected)" : "none"};
+  text-transform: uppercase;
+  text-align: center;
+`;
+
 const Content = styled.div`
   width: 100%;
   display: flex;
@@ -20,8 +38,10 @@ const Content = styled.div`
 `;
 
 const NavBar = () => {
+  const dispatch = useDispatch();
   const candies = useSelector(selectCandies);
   const navbarEnabled = useSelector(selectNavBarEnabled);
+  const page = useSelector(selectPage);
 
   if (!navbarEnabled) return null;
 
@@ -31,6 +51,13 @@ const NavBar = () => {
       <Content>
         <Seperator />
         {candies + " candies"}
+        <Seperator />
+        <Button
+          selected={page === Page.TheCandyBox}
+          onClick={() => dispatch(setPage(Page.TheCandyBox))}
+        >
+          The Candy Box
+        </Button>
         <Seperator />
       </Content>
       <Line />
