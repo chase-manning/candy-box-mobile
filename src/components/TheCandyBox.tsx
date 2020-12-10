@@ -7,7 +7,12 @@ import {
   selectGroundCandies,
   throwCandiesOnGround,
 } from "../store/currencySlice";
-import { Page, selectPage } from "../store/navigationSlice";
+import {
+  Page,
+  selectNavBarEnabled,
+  selectPage,
+  enableNavBar,
+} from "../store/navigationSlice";
 
 const StyledTheCandyBox = styled.div`
   width: 100%;
@@ -59,11 +64,13 @@ const TheCandyBox = () => {
   const page = useSelector(selectPage);
   const candies = useSelector(selectCandies);
   const groundCandies = useSelector(selectGroundCandies);
+  const navBarEnabled = useSelector(selectNavBarEnabled);
 
   if (page !== Page.TheCandyBox) return null;
 
   return (
     <StyledTheCandyBox>
+      {!navBarEnabled && <div>You have {candies} candies</div>}
       <Button onClick={() => dispatch(removeCandies(candies))}>
         Eat all the candies
       </Button>
@@ -80,7 +87,11 @@ const TheCandyBox = () => {
           )}
         </div>
       )}
-      {candies >= 30 && <Button>Request a new feature (30 candies)</Button>}
+      {candies >= 30 && (
+        <Button onClick={() => dispatch(enableNavBar())}>
+          Request a new feature (30 candies)
+        </Button>
+      )}
     </StyledTheCandyBox>
   );
 };
