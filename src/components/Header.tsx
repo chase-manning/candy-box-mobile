@@ -11,7 +11,7 @@ const StyledHeader = styled.div`
 const Header = () => {
   const candies = useSelector(selectCandies);
 
-  return <StyledHeader>{candies}</StyledHeader>;
+  return <StyledHeader>{"You have " + candies + " candies"}</StyledHeader>;
 };
 
 export default Header;
