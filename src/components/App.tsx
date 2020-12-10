@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <StyledApp onClick={() => setMoney(money + 1)}>
-      <Header money={money} />
+      <Header />
     </StyledApp>
   );
 };

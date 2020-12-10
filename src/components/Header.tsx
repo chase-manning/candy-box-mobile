@@ -1,17 +1,17 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { selectCandies } from "../store/currencySlice";
 
 const StyledHeader = styled.div`
   width: 100%;
   padding: 10px;
 `;
 
-type Props = {
-  money: number;
-};
+const Header = () => {
+  const candies = useSelector(selectCandies);
 
-const Header = (props: Props) => {
-  return <StyledHeader>{props.money}</StyledHeader>;
+  return <StyledHeader>{candies}</StyledHeader>;
 };
 
 export default Header;
