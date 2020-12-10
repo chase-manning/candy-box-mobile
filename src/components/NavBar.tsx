@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { selectCandies } from "../store/currencySlice";
+import { selectNavBarEnabled } from "../store/navigationSlice";
 
 const StyledNavBar = styled.div`
   width: 100%;
@@ -10,8 +11,11 @@ const StyledNavBar = styled.div`
 
 const NavBar = () => {
   const candies = useSelector(selectCandies);
+  const navbarEnabled = useSelector(selectNavBarEnabled);
 
-  return <StyledNavBar>{"You have " + candies + " candies"}</StyledNavBar>;
+  if (!navbarEnabled) return null;
+
+  return <StyledNavBar>{candies + " candies"}</StyledNavBar>;
 };
 
 export default NavBar;
