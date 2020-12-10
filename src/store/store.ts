@@ -1,4 +1,5 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import characterSlice from "./characterSlice";
 import currencySlice from "./currencySlice";
 import navigationSlice from "./navigationSlice";
 
@@ -6,6 +7,7 @@ export const store = configureStore({
   reducer: {
     currencies: currencySlice,
     navigation: navigationSlice,
+    character: characterSlice,
   },
 });
 
