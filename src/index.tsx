@@ -8,8 +8,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --main: #2D31AC;
-    --bg: #f7f8fc;
+    --selected: #BFBFBF;
   }
 
   * {
