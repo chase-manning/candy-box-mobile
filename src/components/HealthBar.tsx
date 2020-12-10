@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { selectCurrentHealth, selectMaxHealth } from "../store/characterSlice";
+import { selectHealthBarEnabled } from "../store/navigationSlice";
 
 const StyledHealthBar = styled.div`
   width: 100%;
@@ -40,6 +41,9 @@ const PercentText = styled.div`
 const HealthBar = () => {
   const maxHealth = useSelector(selectMaxHealth);
   const currentHealth = useSelector(selectCurrentHealth);
+  const healthBarEnabled = useSelector(selectHealthBarEnabled);
+
+  if (!healthBarEnabled) return null;
 
   return (
     <StyledHealthBar>
