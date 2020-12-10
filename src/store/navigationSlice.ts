@@ -3,6 +3,7 @@ import { RootState } from "./store";
 
 export enum Page {
   TheCandyBox,
+  Map,
 }
 
 interface NavigationState {
