@@ -25,7 +25,7 @@ export const currencySlice = createSlice({
       state.candies += action.payload;
     },
     removeCandies: (state, action: PayloadAction<number>) => {
-      state.candies += action.payload;
+      state.candies -= action.payload;
     },
     throwCandiesOnGround: (state) => {
       state.groundCandies += 10;

@@ -10,7 +10,7 @@ const CurrencyGenerator = () => {
     dispatch(addCandies(candiesPerSecond));
     setTimeout(() => {
       AddCurrencies();
-    }, 1000);
+    }, 100);
   };
 
   useEffect(() => AddCurrencies(), []);
