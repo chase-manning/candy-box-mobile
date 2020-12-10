@@ -7,10 +7,12 @@ export enum Page {
 
 interface NavigationState {
   page: Page;
+  navBarEnabled: boolean;
 }
 
 const initialState: NavigationState = {
   page: Page.TheCandyBox,
+  navBarEnabled: false,
 };
 
 export const navigationSlice = createSlice({
@@ -20,11 +22,16 @@ export const navigationSlice = createSlice({
     setPage: (state, action: PayloadAction<Page>) => {
       state.page = action.payload;
     },
+    enableNavBar: (state) => {
+      state.navBarEnabled = true;
+    },
   },
 });
 
-export const { setPage } = navigationSlice.actions;
+export const { setPage, enableNavBar } = navigationSlice.actions;
 
 export const selectPage = (state: RootState) => state.navigation.page;
+export const selectNavBarEnabled = (state: RootState) =>
+  state.navigation.navBarEnabled;
 
 export default navigationSlice.reducer;
