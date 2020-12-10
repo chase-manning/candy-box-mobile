@@ -33,7 +33,11 @@ export const navigationSlice = createSlice({
   },
 });
 
-export const { setPage, enableNavBar } = navigationSlice.actions;
+export const {
+  setPage,
+  enableNavBar,
+  enableHealthBar,
+} = navigationSlice.actions;
 
 export const selectPage = (state: RootState) => state.navigation.page;
 export const selectNavBarEnabled = (state: RootState) =>
