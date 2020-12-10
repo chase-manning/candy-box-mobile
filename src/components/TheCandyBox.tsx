@@ -12,6 +12,7 @@ import {
   selectNavBarEnabled,
   selectPage,
   enableNavBar,
+  enableHealthBar,
 } from "../store/navigationSlice";
 
 const StyledTheCandyBox = styled.div`
@@ -95,6 +96,19 @@ const TheCandyBox = () => {
         <Button onClick={() => dispatch(enableNavBar())}>
           Request a new feature (30 candies)
         </Button>
+      )}
+      {candies >= 5 && navBarEnabled && (
+        <Button onClick={() => dispatch(enableHealthBar())}>
+          Request another one (5 candies)
+        </Button>
+      )}
+      {navBarEnabled && !enableHealthBar && (
+        <Text>You've unlocked a Nav Bar! (below)</Text>
+      )}
+      {navBarEnabled && (
+        <Text>
+          Here's 100 health points for you. They are going to be useful.
+        </Text>
       )}
     </StyledTheCandyBox>
   );
