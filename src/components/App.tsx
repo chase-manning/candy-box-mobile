@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import CurrencyGenerator from "./CurrencyGenerator";
 import Header from "./Header";
 
 const StyledApp = styled.div`
@@ -15,6 +16,7 @@ const App = () => {
 
   return (
     <StyledApp onClick={() => setMoney(money + 1)}>
+      <CurrencyGenerator />
       <Header />
     </StyledApp>
   );
