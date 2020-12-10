@@ -9,6 +9,7 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   :root {
     --selected: #BFBFBF;
+    --health-full: #15D500;
   }
 
   * {
