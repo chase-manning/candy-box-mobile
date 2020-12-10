@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import CurrencyGenerator from "./CurrencyGenerator";
+import HealthBar from "./HealthBar";
 import NavBar from "./NavBar";
 import TheCandyBox from "./TheCandyBox";
 
@@ -21,6 +22,7 @@ const App = () => {
     <StyledApp onClick={() => setMoney(money + 1)}>
       <CurrencyGenerator />
       <TheCandyBox />
+      <HealthBar />
       <NavBar />
     </StyledApp>
   );
