@@ -40,8 +40,8 @@ const Content = styled.div`
 const NavBar = () => {
   const dispatch = useDispatch();
   const candies = useSelector(selectCandies);
-  const navbarEnabled = useSelector(selectNavBarEnabled);
   const page = useSelector(selectPage);
+  const navbarEnabled = useSelector(selectNavBarEnabled);
 
   if (!navbarEnabled) return null;
 
