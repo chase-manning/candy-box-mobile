@@ -76,7 +76,11 @@ const TheCandyBox = () => {
       </Button>
       {candies + groundCandies >= 10 && (
         <div>
-          <Button onClick={() => dispatch(throwCandiesOnGround())}>
+          <Button
+            onClick={() => {
+              if (candies >= 10) dispatch(throwCandiesOnGround());
+            }}
+          >
             Throw 10 candies on the ground
           </Button>
           {groundCandies > 0 && (
