@@ -3,15 +3,15 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { selectCandies } from "../store/currencySlice";
 
-const StyledHeader = styled.div`
+const StyledNavBar = styled.div`
   width: 100%;
   padding: 10px;
 `;
 
-const Header = () => {
+const NavBar = () => {
   const candies = useSelector(selectCandies);
 
-  return <StyledHeader>{"You have " + candies + " candies"}</StyledHeader>;
+  return <StyledNavBar>{"You have " + candies + " candies"}</StyledNavBar>;
 };
 
-export default Header;
+export default NavBar;

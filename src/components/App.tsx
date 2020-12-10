@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import CurrencyGenerator from "./CurrencyGenerator";
-import Header from "./Header";
+import NavBar from "./NavBar";
 import TheCandyBox from "./TheCandyBox";
 
 const StyledApp = styled.div`
@@ -10,6 +10,8 @@ const StyledApp = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 const App = () => {
@@ -18,8 +20,8 @@ const App = () => {
   return (
     <StyledApp onClick={() => setMoney(money + 1)}>
       <CurrencyGenerator />
-      <Header />
       <TheCandyBox />
+      <NavBar />
     </StyledApp>
   );
 };
