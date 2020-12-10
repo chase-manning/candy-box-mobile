@@ -115,7 +115,7 @@ const TheCandyBox = () => {
       {/* Map Unlock */}
       {candies >= 10 && healthBarEnabled && !mapEnabled && (
         <Button onClick={() => dispatch(enableMap())}>
-          The one has to be worth the candies. (10 candies)
+          And another! (10 candies)
         </Button>
       )}
 
