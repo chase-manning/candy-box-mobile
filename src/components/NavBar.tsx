@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { selectCandies } from "../store/currencySlice";
 import {
   Page,
+  selectMapEnabled,
   selectNavBarEnabled,
   selectPage,
   setPage,
@@ -45,6 +46,7 @@ const NavBar = () => {
   const candies = useSelector(selectCandies);
   const page = useSelector(selectPage);
   const navbarEnabled = useSelector(selectNavBarEnabled);
+  const mapEnabled = useSelector(selectMapEnabled);
 
   if (!navbarEnabled) return null;
 
@@ -61,13 +63,15 @@ const NavBar = () => {
         >
           The Candy Box
         </Button>
-        <Seperator />
-        <Button
-          selected={page === Page.Map}
-          onClick={() => dispatch(setPage(Page.Map))}
-        >
-          Map
-        </Button>
+        {mapEnabled && <Seperator />}
+        {mapEnabled && (
+          <Button
+            selected={page === Page.Map}
+            onClick={() => dispatch(setPage(Page.Map))}
+          >
+            Map
+          </Button>
+        )}
         <Seperator />
       </Content>
       <Line />
