@@ -51,8 +51,8 @@ const RenderArea = (props: Props) => {
 
   return (
     <StyledRenderArea>
-      {overlayedArea.map((line: string) => (
-        <Line>{line}</Line>
+      {overlayedArea.map((line: string, index: number) => (
+        <Line key={index}>{line}</Line>
       ))}
     </StyledRenderArea>
   );
