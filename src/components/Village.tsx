@@ -29,7 +29,7 @@ const Village = () => {
   ]);
 
   const animate = () => {
-    if (heightModify === 4) {
+    if (heightModify === 3) {
       heightModify = 0;
       smokeAscii = ["( ", " )"];
     } else {
