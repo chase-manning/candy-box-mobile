@@ -4,7 +4,7 @@ import RenderArea, { Overlay } from "./RenderArea";
 
 const Village = () => {
   let heightModify = 0;
-  let smokeAscii = ["(", ")"];
+  let smokeAscii = ["( ", " )"];
   const [smokes, setSmokes] = useState([
     {
       area: smokeAscii,
@@ -31,7 +31,7 @@ const Village = () => {
   const animate = () => {
     if (heightModify === 4) {
       heightModify = 0;
-      smokeAscii = ["(", ")"];
+      smokeAscii = ["( ", " )"];
     } else {
       heightModify += 1;
       smokeAscii = smokeAscii.reverse();
