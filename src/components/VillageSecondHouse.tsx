@@ -6,8 +6,8 @@ const StyledVillageSecondHouse = styled.div`
   height: 100%;
 `;
 
-const VillageFirstHouse = () => {
+const VillageSecondHouse = () => {
   return <StyledVillageSecondHouse>Second House</StyledVillageSecondHouse>;
 };
 
-export default VillageFirstHouse;
+export default VillageSecondHouse;
