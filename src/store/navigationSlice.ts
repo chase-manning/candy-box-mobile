@@ -13,7 +13,7 @@ export enum VillagePage {
   ThirdHouse,
   Forge,
   FourthHouse,
-  FithHouse,
+  FifthHouse,
 }
 
 interface NavigationState {
