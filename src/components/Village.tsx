@@ -9,6 +9,7 @@ import {
 import Button from "../styled/Button";
 import VillageFirstHouse from "./VillageFirstHouse";
 import VillageHome from "./VillageHome";
+import VillageSecondHouse from "./VillageSecondHouse";
 
 const StyledVillage = styled.div`
   width: 100%;
@@ -25,6 +26,7 @@ const Village = () => {
     <StyledVillage>
       {villagePage === VillagePage.HOME && <VillageHome />}
       {villagePage === VillagePage.FirstHouse && <VillageFirstHouse />}
+      {villagePage === VillagePage.SecondHouse && <VillageSecondHouse />}
       <Button onClick={() => dispatch(setVillagePage(VillagePage.HOME))}>
         Back to the village
       </Button>
