@@ -27,9 +27,11 @@ const Village = () => {
       {villagePage === VillagePage.HOME && <VillageHome />}
       {villagePage === VillagePage.FirstHouse && <VillageFirstHouse />}
       {villagePage === VillagePage.SecondHouse && <VillageSecondHouse />}
-      <Button onClick={() => dispatch(setVillagePage(VillagePage.HOME))}>
-        Back to the village
-      </Button>
+      {villagePage !== VillagePage.HOME && (
+        <Button onClick={() => dispatch(setVillagePage(VillagePage.HOME))}>
+          Back to the village
+        </Button>
+      )}
     </StyledVillage>
   );
 };
