@@ -1,4 +1,4 @@
-const village = [
+export const village = [
   "                                                 /\\",
   '                                                /""\\',
   '                                               /""""\\',
@@ -47,5 +47,3 @@ const village = [
   "   |___________|    |_________|   |______|     |    |   |___________|   |_________|     |_______|",
   "                                               |    |",
 ];
-
-export default village;
