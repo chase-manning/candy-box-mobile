@@ -8,6 +8,7 @@ import {
 } from "../store/navigationSlice";
 import Button from "../styled/Button";
 import VillageFirstHouse from "./VillageFirstHouse";
+import VillageForge from "./VillageForge";
 import VillageHome from "./VillageHome";
 import VillageSecondHouse from "./VillageSecondHouse";
 import VillageThirdHouse from "./VillageThirdHouse";
@@ -29,6 +30,7 @@ const Village = () => {
       {villagePage === VillagePage.FirstHouse && <VillageFirstHouse />}
       {villagePage === VillagePage.SecondHouse && <VillageSecondHouse />}
       {villagePage === VillagePage.ThirdHouse && <VillageThirdHouse />}
+      {villagePage === VillagePage.Forge && <VillageForge />}
       {villagePage !== VillagePage.HOME && (
         <Button onClick={() => dispatch(setVillagePage(VillagePage.HOME))}>
           Back to the village
