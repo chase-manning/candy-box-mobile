@@ -17,17 +17,12 @@ import {
   selectMapEnabled,
   enableMap,
 } from "../store/navigationSlice";
+import Button from "../styled/Button";
 
 const StyledTheCandyBox = styled.div`
   width: 100%;
   height: 100%;
   padding: 10px;
-`;
-
-const Button = styled.button`
-  margin-top: 50px;
-  border: solid 1px #464c54;
-  background-color: #dcdad5;
 `;
 
 const Text = styled.div`
