@@ -132,7 +132,7 @@ const VillageHome = () => {
         height={5}
       />
       <Button
-        onClick={() => dispatch(setVillagePage(VillagePage.FithHouse))}
+        onClick={() => dispatch(setVillagePage(VillagePage.FifthHouse))}
         x={94}
         y={23}
         width={10}
