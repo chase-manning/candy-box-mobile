@@ -10,6 +10,7 @@ const StyledRenderArea = styled.div`
 
 const Line = styled.div`
   width: 100%;
+  white-space: pre;
 `;
 
 export type Overlay = {
