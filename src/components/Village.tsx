@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { village } from "../ascii/places/village/village/village";
 import { setVillagePage, VillagePage } from "../store/navigationSlice";
-import RenderArea, { Overlay } from "./RenderArea";
+import RenderArea from "./RenderArea";
 
 const StyledVillage = styled.div`
   width: 100%;
