@@ -6,18 +6,30 @@ export enum Page {
   Map,
 }
 
+export enum VillagePage {
+  HOME,
+  FirstHouse,
+  SecondHouse,
+  ThirdHouse,
+  Forge,
+  FourthHouse,
+  FithHouse,
+}
+
 interface NavigationState {
-  page: Page;
   navBarEnabled: boolean;
   healthBarEnabled: boolean;
   mapEnabled: boolean;
+  page: Page;
+  villagePage: VillagePage;
 }
 
 const initialState: NavigationState = {
-  page: Page.TheCandyBox,
   navBarEnabled: false,
   healthBarEnabled: false,
   mapEnabled: false,
+  page: Page.TheCandyBox,
+  villagePage: VillagePage.HOME,
 };
 
 export const navigationSlice = createSlice({
@@ -26,6 +38,9 @@ export const navigationSlice = createSlice({
   reducers: {
     setPage: (state, action: PayloadAction<Page>) => {
       state.page = action.payload;
+    },
+    setVillagePage: (state, action: PayloadAction<VillagePage>) => {
+      state.villagePage = action.payload;
     },
     enableNavBar: (state) => {
       state.navBarEnabled = true;
@@ -41,12 +56,15 @@ export const navigationSlice = createSlice({
 
 export const {
   setPage,
+  setVillagePage,
   enableNavBar,
   enableHealthBar,
   enableMap,
 } = navigationSlice.actions;
 
 export const selectPage = (state: RootState) => state.navigation.page;
+export const selectVillagePage = (state: RootState) =>
+  state.navigation.villagePage;
 export const selectNavBarEnabled = (state: RootState) =>
   state.navigation.navBarEnabled;
 export const selectHealthBarEnabled = (state: RootState) =>
