@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { village } from "../ascii/places/village/village/village";
-import {
-  selectVillagePage,
-  setVillagePage,
-  VillagePage,
-} from "../store/navigationSlice";
+import { setVillagePage, VillagePage } from "../store/navigationSlice";
 import RenderArea from "./RenderArea";
 
 const StyledVillageHome = styled.div`
