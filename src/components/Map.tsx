@@ -20,7 +20,6 @@ const Map = () => {
   return (
     <StyledMap>
       <Village />
-      <VillageFirstHouse />
     </StyledMap>
   );
 };
