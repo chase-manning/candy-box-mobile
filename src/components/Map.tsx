@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { Page, selectPage } from "../store/navigationSlice";
 import Village from "./Village";
+import VillageFirstHouse from "./VillageFirstHouse";
 
 const StyledMap = styled.div`
   width: 100%;
@@ -19,6 +20,7 @@ const Map = () => {
   return (
     <StyledMap>
       <Village />
+      <VillageFirstHouse />
     </StyledMap>
   );
 };
