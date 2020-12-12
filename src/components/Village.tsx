@@ -9,17 +9,17 @@ const Village = () => {
     {
       area: smokeAscii,
       x: 8,
-      y: 26,
+      y: 22,
     },
     {
       area: smokeAscii,
       x: 64,
-      y: 26,
+      y: 22,
     },
     {
       area: smokeAscii,
       x: 80,
-      y: 26,
+      y: 22,
     },
     {
       area: smokeAscii,
@@ -41,22 +41,22 @@ const Village = () => {
       {
         area: smokeAscii,
         x: 8,
-        y: 26 - heightModify,
+        y: 22 - heightModify,
       },
       {
         area: smokeAscii,
         x: 64,
-        y: 26 - heightModify,
+        y: 22 - heightModify,
       },
       {
         area: smokeAscii,
         x: 80,
-        y: 26 - heightModify,
+        y: 22 - heightModify,
       },
       {
         area: smokeAscii,
         x: 59,
-        y: 42 - heightModify,
+        y: 38 - heightModify,
       },
     ]);
 
