@@ -17,8 +17,10 @@ const GlobalStyle = createGlobalStyle`
       margin: 0;
       padding: 0;
       font-family: monospace;
+      font-size: 12px;
   }
   button {
+    background: none; border: none;
       outline: none;
   }
 `;
