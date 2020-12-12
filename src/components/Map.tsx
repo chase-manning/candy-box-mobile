@@ -1,14 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import village from "../ascii/places/village/village/village";
 import { Page, selectPage } from "../store/navigationSlice";
-import RenderArea from "./RenderArea";
+import Village from "./Village";
 
 const StyledMap = styled.div`
   width: 100%;
   height: 100%;
-  white-space: pre;
   overflow: auto;
 `;
 
@@ -19,7 +17,7 @@ const Map = () => {
 
   return (
     <StyledMap>
-      <RenderArea area={village} />
+      <Village />
     </StyledMap>
   );
 };
