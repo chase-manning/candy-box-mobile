@@ -41,7 +41,7 @@ type Props = {
 };
 
 const RenderArea = (props: Props) => {
-  let overlayedArea = props.area;
+  let overlayedArea = [...props.area];
   if (props.overlays) {
     props.overlays.forEach(
       (overlay: Overlay) =>
