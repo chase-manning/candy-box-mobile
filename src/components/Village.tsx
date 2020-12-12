@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { village } from "../ascii/places/village/village/village";
-import { setVillagePage, VillagePage } from "../store/navigationSlice";
+import {
+  selectVillagePage,
+  setVillagePage,
+  VillagePage,
+} from "../store/navigationSlice";
 import RenderArea from "./RenderArea";
 
 const StyledVillage = styled.div`
@@ -28,6 +32,7 @@ const Button = styled.button`
 
 const Village = () => {
   const dispatch = useDispatch();
+  const villagePage = useSelector(selectVillagePage);
 
   let heightModify = 0;
   let smokeAscii = ["( ", " )"];
@@ -92,6 +97,8 @@ const Village = () => {
   useEffect(() => {
     animate();
   }, []);
+
+  if (villagePage !== VillagePage.HOME) return null;
 
   return (
     <StyledVillage>
