@@ -72,7 +72,10 @@ const TheCandyBox = () => {
   return (
     <StyledTheCandyBox>
       {!navBarEnabled && <div>You have {candies} candies</div>}
-      <Button onClick={() => dispatch(removeCandies(candies))}>
+      <Button
+        onClick={() => dispatch(removeCandies(candies))}
+        marginTop={"50px"}
+      >
         Eat all the candies
       </Button>
       {candies + groundCandies >= 10 && (
@@ -81,6 +84,7 @@ const TheCandyBox = () => {
             onClick={() => {
               if (candies >= 10) dispatch(throwCandiesOnGround());
             }}
+            marginTop={"50px"}
           >
             Throw 10 candies on the ground
           </Button>
@@ -95,21 +99,21 @@ const TheCandyBox = () => {
 
       {/* Nav Bar Unlock */}
       {candies >= 30 && !navBarEnabled && (
-        <Button onClick={() => dispatch(enableNavBar())}>
+        <Button onClick={() => dispatch(enableNavBar())} marginTop={"50px"}>
           Request a new feature (30 candies)
         </Button>
       )}
 
       {/* Heath Box Unlock */}
       {candies >= 5 && navBarEnabled && !healthBarEnabled && (
-        <Button onClick={() => dispatch(enableHealthBar())}>
+        <Button onClick={() => dispatch(enableHealthBar())} marginTop={"50px"}>
           Request another one (5 candies)
         </Button>
       )}
 
       {/* Map Unlock */}
       {candies >= 10 && healthBarEnabled && !mapEnabled && (
-        <Button onClick={() => dispatch(enableMap())}>
+        <Button onClick={() => dispatch(enableMap())} marginTop={"50px"}>
           And another! (10 candies)
         </Button>
       )}
